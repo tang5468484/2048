@@ -22,6 +22,7 @@ var constants = {
 var points = [];
 var score = 0;
 var status1 = 0;
+var winnum = 2048;  //win score
 
 function intiRect()
 {
@@ -152,7 +153,7 @@ function plus(a, b, c, d)
             if (temp[k] === temp[i]){
                 temp[k] = temp[k] + temp[i];
                 temp[i] = 0;
-                if (temp[k] === 16){
+                if (temp[k] === winnum){
                     document.removeEventListener('keydown', processKeyDown, false);
                     status1  = 1;
                 }
